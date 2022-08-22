@@ -1,0 +1,12 @@
+.shoe_card_css{
+    border: 1px solid Red;
+    border-radius: 0.25rem;
+    display: block;
+}
+
+.shoe_images_css{
+    height: auto;
+}
+.card_css{
+    background: rgb(55, 104, 104);
+}

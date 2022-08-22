@@ -1,0 +1,52 @@
+<template>
+    <lightning-card title="Shoes" icon-name="utility:cart">
+
+        <template if:true={shoes}>
+
+
+            <lightning-layout multiple-rows="true">
+                <template for:each={shoes} for:item="shoeDetails">
+                    <lightning-layout-item key={shoeDetails.id} size="3" class="slds-var-p-around_x-small">
+
+                        <lightning-card title={shoeDetails.name} class="shoe_card_css">
+                        <lightning-card>
+                            <div>
+                                <img src={shoeDetails.Image__c} alt="Shoes" class="shoe_images_css"/>
+                                <hr/>
+                            </div>
+                        </lightning-card>
+                        <lightning-card class="slds-var-p-around_x-small" >
+                            <div class="card_css" >
+                                <strong>Color</strong> : {shoeDetails.Color__c} <br/>
+                                <strong>Size</strong> : {shoeDetails.Size__c}<br/>
+                                <strong>Price</strong> : {shoeDetails.Price__c}<br/>
+                            </div>
+                            <div >
+                                <lightning-button  variant="brand" label="View Details" onclick={handleDetails}></lightning-button>
+                            </div>
+                        </lightning-card>
+                            <!--<div class="slds-var-p-horizontal_small">
+                                <div class="slds-grid slds-grid_vertical slds-wrap">
+                                    <div class="slds-col slds-size_6-of-12">
+                                        <img src={shoeDetails.Image__c} alt="Shoes" class="shoe_images_css"/>
+                                    </div>
+                                    <div class="slds-col slds-size_4-of-12">
+                                        <p class="slds-var-m-bottom__xx-small">{shoeDetails.Color__c}</p>
+                                        <p class="slds-var-m-bottom__xx-small">{shoeDetails.Size__c}</p>
+                                        <p class="slds-var-m-bottom__xx-small">{shoeDetails.Price__c}</p>
+                                    </div>
+                                    <div class="slds-col slds-size_2-of-12">
+                                        <lightning-button  variant="brand" label="View Details" onclick={handleDetails}></lightning-button>
+                                    </div>
+                                </div>
+                            </div>-->
+                        </lightning-card>
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+        </template>
+        <template if:true={error}>
+            Error occured in fetching the data .Please try later!!!!!
+        </template>
+    </lightning-card>
+</template>
